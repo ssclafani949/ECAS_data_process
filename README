@@ -1,0 +1,18 @@
+These scripts are provided to reproduce the Enhanced Cascade Sample.  The flow
+is as follows:
+
+1a. Data is gathered from subruns located in /data/ana and saved in full runs in
+/data/user/ssclafani
+
+1b. MC (Nugen, Corsika, and MuonGun) are processed and hdf5 files are saved
+
+2. Those files are processed and DNNs and Cascade Generator are added, per run
+i3 and hdf5 files are saved
+
+3. The hdf5 files are combined and then relevant keys are selected and saved to
+a pandas array
+
+4. The MC is trained in two steps.  Step 01 seperates bg muons from neutrinos,
+Step 02 selects for cascades, removing obvious tracks
+
+5. Data is processed through BDT, GRL is added
